@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pxx {
+        /*它的初始值是 auto，此时浏览器会检查元素是否设置了 width 属性值。
+        如果有，则使用 width 的值作为 flex-basis 的值；如果没有，则用元素内容自身的大小。
+        如果 flex-basis 的值不是 auto，width 属性会被忽略。*/
+        flex-basis: 100px;
+    }
+
+    #pdd {
+        width: 500px;
+        display: flex;
+        /*没有给高度所有没有自动伸缩*/
+    }
+</style>
+<body>
+    <div id="pdd">
+        <div class="pxx" style="background-color: red;">1111111111</div>
+        <div class="pxx" style="background-color: blue;">2</div>
+        <div class="pxx" style="background-color: pink;">3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            display: grid;
+            grid-template-rows: repeat(4, 30px);
+            grid-template-columns: repeat(4, 30px);
+            /* 水平方向分布 */
+            /*justify-content: space-between;*/
+            /* 垂直方向分布 */
+            /*align-content: space-between;*/
+
+            /* 简写 垂直方向 水平方向 */
+            place-content: start center;
+            border: 1px solid grey;
+        }
+
+        .container div {
+            background-clip: content-box;
+            background: pink;
+            border: 1px solid grey;
+        }
+
+    </style>
+</head>
+<body>
+<!-- 对项目进行排列的时候，是按照总栅格分布在剩余空间的，即使栅格没有内容 -->
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+</body>
+</html>

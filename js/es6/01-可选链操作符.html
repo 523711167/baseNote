@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script type="application/javascript">
+    <!-- 作用精简代码   -->
+    let son = {
+        name: '拼刀刀',
+        age: 18,
+        clothing: {
+            tShirt: 'ZhenWeiSi',
+            pants: 'LiWeiSi'
+        },
+        work() {
+            return '我是你爸爸'
+        },
+        doing: () => {}
+    }
+
+    let father = {
+        name: '拼大刀',
+        age: 28,
+    }
+
+    console.log('son.clothing?.pants =', son.clothing?.pants)
+
+    console.log('father.clothing?.pants =', father.clothing?.pants)
+
+    console.log('son.work?.() =', son.work?.())
+
+    console.log('son.work?.() =', father.work?.())
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father{
+            height: 500px;
+            width: 500px;
+            background-color: pink;
+        }
+
+        .son {
+            height: 200px;
+            width: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<!--
+       js事件流
+       先经过捕获(从最外层到目标元素)阶段在到冒泡阶段(从目标元素到最外层)
+       addEventListener 第三个参数设置true 捕获阶段触发事件 false 冒泡阶段触发事件(默认)
+-->
+<script type="application/javascript">
+
+
+    let father = document.querySelector('.father');
+    let son = document.querySelector('.son');
+
+
+    document.addEventListener('click', function () {
+        alert('我是document')
+    });
+
+    father.addEventListener('click', function () {
+        alert('我是father')
+    });
+
+    son.addEventListener('click', function (e) {
+        alert('我是son')
+        //阻止事件冒泡
+        e.stopPropagation()
+    });
+</script>
+</body>
+</html>

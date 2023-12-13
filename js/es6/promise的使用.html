@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    /**
+     *  new Promise是异步的
+     *  new Promise 有两个函数入参 resolve reject
+     *  调用resolve 执行then
+     */
+
+/*    {
+        //Promise的执行流程
+        let add = new Promise((resolve, reject) => {
+            //执行异步任务 ,如果调用resolve方法，就会执行Promise的then方法的第一个成功回调
+            //如果调用reject方法，执行Promise的then方法的第二个回调
+            setTimeout(() => {
+                resolve(222)
+            }, 2000);
+        })
+        console.log('我会首先执行')
+        add.then((value) => {
+            console.log(value)
+        }, (error) => {
+
+        })
+        console.log(add)
+    }*/
+
+    /*
+        {
+            //resolve执行，pendding => fulfilled
+            //reject执行, pendding => rejected
+            let add = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(100)
+                }, 2000);
+            })
+
+            //resolve和reject回调函数返回非Promise对象，then返回的是fulfilled状态的Promise对象
+            //resolve和reject回调函数返回Promise对象, then返回Promise对象状态由return的Promise对象自己控制
+          let abb = add.then((data) => {
+                    // 如果抛出异常，则返回rejected状态的Promise对象
+                    // throw 123
+                    //返回Promise对象,返回Promise对象状态由return的Promise对象自己控制
+                    return new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                            resolve(123)
+                        }, 1000);
+                    })
+                    //返回非Promise对象,返回的是fulfilled状态的Promise对象
+                    // return 123
+                }, (err) => {
+
+                }).then(value => {
+                console.log('value =', value)
+            })
+            console.log('abb', abb)
+        }*/
+
+/*    {
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('我在吃饭')
+            }, 1000);
+        }).then((value) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([value, '我在运动'])
+                }, 1000);
+            })
+        }, (err) => {
+
+        }).then((value) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([...value, '我在睡觉'])
+                }, 1000);
+            })
+        }, (err) => {
+
+        }).then((value) => {
+            console.log(value)
+        }, (err) => {
+
+        })
+    }*/
+
+    {
+        // await结合async的用法
+        //
+        let add = new Promise((resolve, reject) => {
+            reject()
+        }).then((value) => {
+            console.log('success')
+        }).catch((err) => {
+            console.log('error')
+        })
+        //等价于
+        new Promise((resolve, reject) => {
+            reject()
+        }).then((value) => {
+            console.log('success')
+        }, (err) => {
+            console.log('error')
+        })
+
+        //等价于
+        function addd() {
+            return new Promise((resolve, reject) => {
+                resolve('等价于上面写法')
+            })
+        }
+
+        //async函数体内是按顺序执行,也会返回Promise对象
+
+        async function heiheihei() {
+            try {
+                let a = await addd()
+                console.log(a)
+                return 2
+            } catch (error) {
+                console.log(error)
+                return 1
+            }
+        }
+
+        console.log('heiheihei() =', heiheihei())
+    }
+
+/*     {
+        // 
+        let app1 = new Promise((resolve, reject) => {
+            resolve("成功")
+            // reject('失败')
+        })
+        let app2 = new Promise((resolve, reject) => {
+            // resolve("成功")
+            reject('失败')
+            // throw new  Error()
+        })
+
+        // app1和app2只要执行回调，add状态为resolved，add的result为数组，包含每个Promise的返回值
+        const add = Promise.allSettled([app1, app2])
+        console.log(add)
+        // app1和app2必须通过resolved状态，ass状态为resolved，result为数组包含，反之ass状态为rejeced，result为错误的字符串
+        const ass = Promise.all([app1, app2])
+        console.log(ass);
+    }*/
+</script>
+
+</html>

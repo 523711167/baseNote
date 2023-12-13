@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>当前数字值为 <span id="val">0</span></div>
+<button id="add">+1</button>
+</body>
+<script src="./lodash.js"></script>
+<script>
+
+    // 获取操作元素
+    const addBtn = document.getElementById('add');
+    const valSpan = document.getElementById('val');
+    // 初始化计数器和值
+    let count = 0;
+    let val = 0;
+
+    // 绑定点击事件
+    addBtn.addEventListener('click', _.throttle(function () {
+        // 计数器+1，值+1
+        count++;
+        val++;
+
+        // 更新DOM显示
+        valSpan.textContent = val;
+    }, 1000, {
+        leading: true, trailing: true
+    }));
+</script>
+</html>

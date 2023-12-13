@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 200px;
+            background: radial-gradient(rgba(0,0,0,0.4), transparent, transparent);
+            /*background: radial-gradient(circle, #ffffff 0%, #ff0000 100%); transparent表示透明*/
+
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            padding-top: 80px;
+        }
+
+    </style>
+</head>
+<body>
+<!-- background: radial-gradient([shape] [size] [position], color-stop1, color-stop2, ..., color-stopN); -->
+<!-- shape表示渐变的形状，默认ellipse椭圆-->
+<!-- size表示渐变的尺寸，默认farthest-corner渐变到容器边角最远处-->
+<!-- position表示渐变的开始位置 默认center中心开始-->
+<!-- 后面代表颜色渐变的过程，color=>color=>color -->
+<div class="container">
+    <h1>Hello, World!</h1>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            border: 1px solid red;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "header header header"
+                                 "nav main main "
+                                 "footer footer footer";
+        }
+
+        .container div {
+            box-sizing: border-box;
+            background: pink;
+            background-clip: content-box;
+            padding: 2px;
+            border: 1px solid blue;
+        }
+
+        .container div:nth-child(1) {
+            grid-area: header;
+        }
+
+        .container div:nth-child(2) {
+            grid-area: nav;
+        }
+
+        .container div:nth-child(3) {
+            grid-area: main;
+        }
+
+        .container div:nth-child(4) {
+            grid-area: footer;
+        }
+
+    </style>
+</head>
+<body>
+<!-- 也可以通过定义网格线名称，使用网格线名称布局-->
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+</body>
+</html>

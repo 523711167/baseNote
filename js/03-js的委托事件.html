@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--
+        事件委托是利用事件冒泡的特性
+-->
+<body>
+<ul>
+    <li>我是第1个</li>
+    <li>我是第2个</li>
+    <li>我是第3个</li>
+    <li>我是第4个</li>
+    <li>我是第5个</li>
+</ul>
+</body>
+<script type="application/javascript">
+
+    let ul = document.querySelector('ul');
+    ul.addEventListener('click', function (e) {
+        console.log('e =', e)
+        e.target.style.color = 'red'
+    });
+</script>
+</html>

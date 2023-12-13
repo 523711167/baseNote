@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 400px;
+            height: 400px;
+            display: grid;
+            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: repeat(3, 100px);
+            /* 水平方向分布 */
+            justify-content: space-between;
+            /* 垂直方向分布 */
+            align-content: space-between;
+            border: 1px solid grey;
+        }
+
+        .container div {
+            width: 80px;
+            height: 80px;
+            background: pink;
+            background-clip: content-box;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid grey;
+        }
+
+        /* 控制div在item中的排列方向 */
+        .container div:nth-child(1) {
+            justify-self: center;
+            align-self: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+</body>
+</html>

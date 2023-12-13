@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: colorChange;
+            animation-duration: 3s;
+
+            animation-fill-mode: backwards;
+            /*测试效果*/
+            /*animation-fill-mode: none;*/
+            /*animation-play-state: paused;*/
+            /*animation-delay: 2s;*/
+        }
+
+        @keyframes colorChange {
+            0% {
+                background-color: blue;
+            }
+            100% {
+                background-color: green;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<!--  默认animation-fill-mode: backwards;
+      表示在动画未开始(停止)的时候，拥有background-color: blue;
+      属性 默认值是none
+-->
+<div class="box"></div>
+
+</body>
+</html>   

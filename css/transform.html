@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*
+            transform: rotate(30DEG) 旋转30度 基点默认为元素中心点
+            transform: translate(30px, 40px) x轴平移30，y轴平移40 基点默认为元素中心点
+            transform: scale(0.1, 2); x轴缩小10倍，y轴放大2倍  基点默认为元素中心点
+            transform-origin:left top;  修改元素的中心点
+
+            transition-timing-function  linear匀速
+            transition-property: all｜width｜transform 指定那个属性需要过渡效果
+            transition-duration: 1s  过渡效果的花费时间
+            transition-delay: 延迟多久后开始
+         */
+        body{
+            perspective: 200px;
+        }
+
+        div	{
+            transition-property: transform, width;
+            width:200px;
+            height:100px;
+            background-color: lightpink;
+        }
+
+        div:hover {
+            width: 400px;
+            transition-duration: 5s;
+            transform: translateX(100px) translateY(100px) translateZ(100px); ;
+            transform-origin:left top;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

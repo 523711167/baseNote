@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            border: 1px solid red;
+            grid-template-rows: [r1] 1fr [r2] 1fr [r3] 1fr [r4];
+            grid-template-columns: [c1] 1fr [c2] 1fr [c3] 1fr [c4];
+        }
+
+        .container div {
+            box-sizing: border-box;
+            background: pink;
+            background-clip: content-box;
+            padding: 2px;
+            border: 1px solid blue;
+        }
+
+        /* 2/2/3/3 行开/列开/行末/列末 */
+        .container div:nth-child(1) {
+            grid-area: r2/ c2/ r3/ c3;
+        }
+
+        .container div:nth-child(4) {
+            grid-area: r1/ c3/ r4/ c4;
+        }
+    </style>
+</head>
+<body>
+<!-- 也可以通过定义网格线名称，使用网格线名称布局-->
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+</body>
+</html>

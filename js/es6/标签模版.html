@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script type="application/javascript">
+    {
+        const person = "Mike";
+        const age = 28;
+
+        function myTag(strings, ...arg) {
+            // strings数组数量为${}数量+1
+            console.log('strings =', strings)
+            //arg
+            console.log('arg =', arg)
+
+            const str0 = strings[0]; // "That "
+            const str1 = strings[1]; // " is a "
+            const str2 = strings[2]; // "."
+
+            const ageStr = arg[1] > 99 ? "centenarian" : "youngster";
+
+            // We can even return a string built using a template literal
+            return `${str0}${arg[0]}${str1}${ageStr}${str2}`;
+        }
+
+        const output = myTag`That${person}is a${age}.`;
+
+        console.log(output);
+    }
+
+
+    {
+        // function template(strings, ...keys) {
+        //     console.log('strings =', strings)
+        //     console.log('keys =', keys)
+        //     return (...values) => {
+        //         const dict = values[values.length - 1] || {};
+        //         const result = [strings[0]];
+        //         keys.forEach((key, i) => {
+        //             const value = Number.isInteger(key) ? values[key] : dict[key];
+        //             result.push(value, strings[i + 1]);
+        //         });
+        //         return result.join("");
+        //     };
+        // }
+        //
+        // const t1Closure = template`${0}${1}${0}!`;
+        // t1Closure("Y", "A"); // "YAY!"
+    }
+</script>
+</html>

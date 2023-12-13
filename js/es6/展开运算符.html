@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    //展开运算符号的用法
+    //第一种 数组的用法，可以展开数组,还可以复制合并数组
+    let arr = [1,2,3,4,5]
+    let arr2 = [6,7,8,9,10]
+    let arr3 = [...arr, ...arr2]
+    console.log(...arr);
+
+    //第二种 定义函数参数
+    //numbers为一个数组
+    function sum(...numbers) {
+
+    }
+
+    //第三种 复制对象属性
+    let person = {age: 18, name: 'Lisi'}
+    let person1 = {...person}
+
+</script>
+</html>

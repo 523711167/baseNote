@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /**
+     * 生成器函数定义 function * () {}
+     * 执行生成器函数返回一个迭代器，执行迭代器next方法，才会执行函数体内容
+     * 第一次执行next 会执行第一个yield以上的代码，并且返回包含yield值的对象
+     */
+
+
+/*    {
+        //生成器函数,异步回调的新实现方案，通过iterator.next()执行
+        let add = function * () {
+            console.log(this)
+        }
+
+        //调用add()，返回一个迭代器
+        let iterator = add()
+        iterator.next()
+    }*/
+/*
+    {
+        let add = function * () {
+            // |
+            // |
+            // 第一阶段
+            // |
+            // |
+            console.log('第一阶段');
+            yield '拼刀刀'
+            // ｜
+            // ｜
+            // 第二阶段
+            // ｜
+            // ｜
+            console.log('第二阶段');
+            yield '拼夕夕'
+            // ｜
+            // ｜
+            // 第三阶段
+            // ｜
+            // ｜
+            console.log('第三阶段');
+            yield '拼啊啊'
+            // ｜
+            // ｜
+            // 第四阶段
+            // ｜
+            // ｜
+            console.log('第四阶段');
+        }
+
+        //yield作为iterator.next的返回值
+        let iterator = add()
+        console.log(iterator.next())
+        for (const a of iterator) {
+            console.log('a', a)
+        }
+    }*/
+
+
+
+
+ /*   {
+        //
+        let add = function * (sub) {
+            console.log('sub', sub)
+            let aa = yield 111
+            console.log('aa', aa)
+            let bb = yield 222
+        }
+        // 参数作为生成器函数的入参
+        let iterator = add('我是第一次调用add()')
+        // iterator.next('我是第一次调用next()') 函数入参作为第一个yield的返回值
+        // iterator.next('我是第一次调用next()') 函数返回值是第一个yield声明的变量
+        iterator.next('我是第一次调用next()')
+    }*/
+
+
+    {
+        //搞个Dome 只可意会
+        //1.网上买票 2.查询订单 3.拿票进站
+        // add(100)返回迭代器对象，不执行代码
+        // iterator.next()代码执行到异地个yield，piao作为返回值返回
+        // 第二次执行iterator.next(numb)，第一个yield返回值是第二次执行iterator.next(numb)的形参，执行到第二次yield
+        let add = function * (money) {
+            let piao = '123456'
+            let numb = yield piao
+            let status = true
+            let ticket = yield status
+            let go = true
+        }
+
+        let iterator = add(100)
+        let numb = iterator.next().value
+        let status = iterator.next(numb).value
+        let go = iterator.next('北京到广州').value
+    }
+
+</script>
+</html>

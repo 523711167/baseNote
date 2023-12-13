@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*
+            animation:
+            1. animation-name定义动画的效果,配合@keyframes
+            2. animation-duration动画完成的时间 ms毫秒单位 s秒单位
+            3. animation-timing-function 动画过渡的效果 linear头到尾的速度是相同的
+            4. animation-delay 动画启动的延迟时间
+            5. animation-iteration-count 动画的播放次数  infinite无限次
+            6. animation-direction 动画播放的模式 normal正常播放 reverse反向播放
+            7. animation-fill-mode 规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。
+            8. animation-play-state 动画的启停开关 paused停止 running启动
+         */
+        .d {
+            width: 350px;
+            /*height: 130px;*/
+            border: 1px black solid;
+            margin: 50px auto;
+
+        }
+
+        .d1, .d2, .d3, .d4, .d5 {
+            margin: 15px 20px;
+            border-radius: 10px;
+        }
+
+        .d1 {
+            width: 30px;
+            height: 60px;
+            background-color: yellow;
+            float: left;
+            animation: moving 1s ease 50ms infinite;
+        }
+
+        .d2 {
+            width: 30px;
+            height: 60px;
+            background-color: blue;
+            float: left;
+            animation: moving 1s ease 100ms infinite;
+        }
+
+        .d3 {
+            width: 30px;
+            height: 60px;
+            background-color: red;
+            float: left;
+            animation: moving 1s ease 150ms infinite;
+        }
+
+        .d4 {
+            width: 30px;
+            height: 60px;
+            background-color: green;
+            float: left;
+            animation: moving 1s ease 200ms infinite;
+        }
+
+        .d5 {
+            width: 30px;
+            height: 60px;
+            background-color: orange;
+            float: left;
+            animation: moving 0.1s ease 300ms infinite;
+
+        }
+
+        @keyframes moving {
+            from {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(0.5);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        p {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="d">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div class="d4"></div>
+    <div class="d5"></div>
+    <p>正在加载</p>
+</div>
+</body>
+</html>

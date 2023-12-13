@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            text-align: center;
+            line-height: 100px;
+            position: relative;
+        }
+
+        .symbol {
+            position: relative;
+            top: -5px;
+            font-size: 5px;
+        }
+
+        .close {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<!-- absolute会脱离文档流，定位最近的非static的父节点定位 -->
+<!-- position默认static， body默认为最外层非static-->
+<div class="container">
+    面积等于S=a<span class="symbol">2</span>
+    <button class="close">关闭</button>
+    <span>我是想测试button元素是否有保留位置</span>
+</div>
+多行元素增强效果1<br>
+多行元素增强效果2<br>
+多行元素增强效果3<br>
+多行元素增强效果4<br>
+多行元素增强效果5<br>
+多行元素增强效果6<br>
+多行元素增强效果7<br>
+多行元素增强效果8<br>
+多行元素增强效果9<br>
+多行元素增强效果10<br>
+</body>
+</html>

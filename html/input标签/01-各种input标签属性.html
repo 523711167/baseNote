@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input标签的value属性</title>
+</head>
+<body>
+<!--
+input 标签的 value 属性的作用是由 input 标签的 type 属性的值决定的
+
+当 type 的取值为 button、reset、submit 中的其中一个时，此时 value 属性的值表示的是按钮上显示的文本
+
+当 type 的取值为 text、password、hidden 中的其中一个时，此时 value 属性的值表示的是输入框中显示的初始值，此初始值可以更改，并且在提交表单时，value 属性的值会发送给服务器（既是初始值，也是提交给服务器的值）
+
+当 type 的取值为 checkbox、radio 中的其中一个时，此时 value 属性的值表示的是提交给服务器的值
+
+当 type 的取值为 image 时，点击它提交表单后，会将用户的点击位置相对于图像左上角的 x 坐标和 y 坐标提交给服务器
+-->
+<form action="#">
+    <fieldset>
+        <legend>value的值是按钮上的文本</legend>
+        <input type="button" value="按钮"> <br>
+        <input type="reset" value="重置"> <br>
+        <input type="submit" value="提交"> <br>
+    </fieldset>
+    <br><br>
+    <fieldset>
+        <form id="form1" action="action" method="get">
+            <legend>value的值是输入框中的初始值</legend>
+            <input name="username" type="text" value="我的type属性值是text"> <br>
+            <input name="password" type="password" value="我的type属性值是password"> <br>
+            <!--
+                定义隐藏字段，隐藏字段对于用户是不可见的
+                隐藏字段通常会存储一个默认值，它们的值也可以由 JavaScript 进行修改
+            -->
+            <input type="hidden" value="我的type属性值是hidden"> <br>
+            <input type="submit" value="提交" />
+            <input type="reset" value="重置"> <br>
+        </form>
+    </fieldset>
+    <br><br>
+    <fieldset>
+        <legend>value的值在提交表单时会发送给服务器</legend>
+        <input type="checkbox" value="v1"> <br>
+        <input type="radio" value="v2"> <br>
+        <!--image型input标签生成的按钮显示为一幅图像，点击它可以提交表单-->
+        <input type="image" src="xxx.png" alt="Submit"> <br>
+        <input type="image" src="xxx.png"> <br>
+    </fieldset>
+
+
+</body>
+</html>

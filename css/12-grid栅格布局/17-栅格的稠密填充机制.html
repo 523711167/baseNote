@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            /* 稠密填充机制，会自动填充空余区域 */
+            grid-auto-flow: row dense;
+        }
+
+        .container div {
+            background-clip: content-box;
+            background: pink;
+            border: 5px solid white;
+        }
+
+        /*
+           后面的 div 不会填充到空余空间的原因是因为网格布局中的默认行为是"自动放置"（auto-placement）。
+           当没有明确指定某个元素的位置时，网格布局会自动将元素放置在可用的空间中，但不会填充到其他元素的位置。
+           如果我明确位置，会自动填充
+        */
+        .container div:nth-child(1) {
+            /*grid-row: 1 / span 1;*/
+            grid-column: 1/ span 2;
+        }
+
+        .container div:nth-child(3) {
+            /*grid-row: 3 / span 1;*/
+            grid-column: 1/ span 3;
+        }
+    </style>
+</head>
+<body>
+<!-- 也可以通过定义网格线名称，使用网格线名称布局-->
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</div>
+</body>
+</html>

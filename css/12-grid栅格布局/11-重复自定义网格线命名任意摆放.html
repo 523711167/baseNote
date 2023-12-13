@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            border: 1px solid red;
+            grid-template-rows: repeat(3, [row-start] 1fr [row-end]);
+            grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
+        }
+
+        .container div {
+            box-sizing: border-box;
+            background: pink;
+            background-clip: content-box;
+            padding: 2px;
+            border: 1px solid blue;
+        }
+
+        /* 真的诡异 */
+        /* 首先给定条件为行开始,在找到对应行开始第几列 */
+        .container div:nth-child(1) {
+            grid-row-start: row-start 1;
+            grid-column-start: col-start 1;
+            grid-row-end: row-end 3;
+            grid-column-end: col-end 1;
+        }
+
+        /* 我觉得这个用法贼垃圾，我不这样用，太诡异了*/
+        .container div:nth-child(2) {
+            grid-row-start: row-start 2;
+            grid-column-start: col-start 2;
+            grid-row-end: row-end 2;
+            grid-column-end: col-end 2;
+        }
+    </style>
+</head>
+<body>
+<!-- 也可以通过定义网格线名称，使用网格线名称布局-->
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+</body>
+</html>

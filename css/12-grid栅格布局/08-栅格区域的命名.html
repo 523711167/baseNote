@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-areas: "header header header"
+                                 "main main . "
+                                 "footer footer footer";
+        }
+    </style>
+</head>
+<body>
+<!-- 注意，区域的命名会影响到网格线。
+     每个区域的起始网格线，会自动命名为区域名-start，终止网格线自动命名为区域名-end。
+     如果某些区域不需要利用，则使用"点"（.）表示。
+ -->
+<div class="container">
+
+</div>
+</body>
+</html>

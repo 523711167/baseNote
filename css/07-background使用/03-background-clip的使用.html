@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .header {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: #f00;
+            padding: 10px;
+            border: 5px solid #000;
+            /*背景绘制在内边距区域内，不包括边框。这是默认值*/
+            background-clip: padding-box;
+        }
+
+        .middle {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            padding: 10px;
+            border: 5px solid transparent;
+            /*背景绘制在边框盒子的内部，包括边框和内边距区域。*/
+            background-clip: border-box;
+        }
+
+        .footer {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            padding: 10px;
+            border: 5px solid white;
+            /*背景仅绘制在内容框内，
+            不包括边框和内边距。*/
+            background-clip: content-box;
+        }
+
+        .textBackground {
+            font-size: 12px;
+            font-weight: bold;
+            background: linear-gradient(to right, #26e8b4, #000000);
+            /* 背景仅绘制在文本的前景文字上。 */
+            -webkit-background-clip: text; /* Safari/Chrome */
+            -webkit-text-fill-color: transparent; /* Safari/Chrome */
+            color: transparent;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+
+</div>
+<div class="middle">
+
+</div>
+<div class="footer">
+
+</div>
+<div class="textBackground">
+    Hello, World!
+</div>
+
+</body>
+</html>
