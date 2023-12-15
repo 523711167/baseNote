@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-bottom: 20px;
+        }
+        .box.intersecting {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<script>
+    // 创建一个 IntersectionObserver 实例
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('intersecting');
+            } else {
+                entry.target.classList.remove('intersecting');
+            }
+        });
+    });
+
+    // 获取所有的目标元素
+    const boxes = document.querySelectorAll('.box');
+
+    // 为每个目标元素添加观察者
+    boxes.forEach(box => {
+        observer.observe(box);
+    });
+</script>
+</body>
+</html>

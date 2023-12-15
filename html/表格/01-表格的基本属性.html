@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- border 表格边框 单位px  -->
+<!-- width 表格宽度 单位px-->
+<!-- height 表格最小高度 单位px 表头和页脚不变-->
+<!-- cellspacing 单元格和单元格距离-->
+<table cellspacing="0"
+       border="1"
+       width="500"
+       height="300">
+    <!--        //表格标题-->
+    <caption>学生信息</caption>
+    <!--        //表格页眉-->
+<!--  height 表头的高度 单位px  -->
+<!--  align  水平对齐方式 -->
+<!--  valign 垂直方向对齐  -->
+    <thead height="50" align="center" valign="top">
+        <tr>
+<!--         所在单元格宽度发生变化 列变化   -->
+<!--         所在单元格高度发生变化 行变化  -->
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>民族</th>
+            <th>政治面貌</th>
+        </tr>
+    </thead>
+    <!--        表格主体-->
+    <tbody height="600" align="center" valign="middle">
+    <tr>
+        <td>张三</td>
+        <td>男</td>
+        <td>18</td>
+        <td>汉族</td>
+        <td>团员</td>
+    </tr>
+    <tr>
+        <td>张三</td>
+        <td>男</td>
+        <td>18</td>
+        <td>汉族</td>
+        <td>团员</td>
+    </tr>
+    <tr>
+        <td>李四</td>
+        <td>女</td>
+        <td>20</td>
+        <td>满族</td>
+        <td>群众</td>
+    </tr>
+    <tr>
+        <td>王五</td>
+        <td>男</td>
+        <td>19</td>
+        <td>回族</td>
+        <td>党员</td>
+    </tr>
+    <tr>
+        <td>赵六</td>
+        <td>女</td>
+        <td>21</td>
+        <td>壮族</td>
+        <td>团员</td>
+    </tr>
+    </tbody>
+<!--    表格页脚-->
+    <tfoot height="50" align="center" valign="middle">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>共计:4人</td>
+    </tr>
+    </tfoot>
+
+</table>
+</body>
+</html>

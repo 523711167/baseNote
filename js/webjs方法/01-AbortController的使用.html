@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<!--
+     可以主动中断fetch请求,可以避免出现条件竞争(useEffect中)
+-->
+<script type="application/javascript">
+    // 创建 AbortController 实例
+    const controller = new AbortController();
+
+    // 获取 signal 对象，用于传递给 fetch 请求
+    const signal = controller.signal;
+
+    // 模拟一个异步请求
+    function fetchData() {
+        fetch('https://api.example.com/data', { signal })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+    }
+
+    // 调用 fetchData 函数开始请求数据
+    fetchData();
+
+    // 5 秒后中止请求
+    setTimeout(() => {
+        controller.abort();
+        console.log('请求已中止');
+    }, 5000);
+
+</script>
+</html>
