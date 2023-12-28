@@ -56,14 +56,18 @@
 
     // 解构赋值+赋值默认初始值
     {
-        let add = function add({name="拼刀刀", age="18", username, password}) {
+        let add = function add({name="拼刀刀", age="18", username, password, person: { }}) {
             console.log("name", name)
             console.log("username", username)
         }
 
         add({
             username: "pdd",
-            password: "pxx"
+            password: "pxx",
+            person: {
+                height: 180,
+                width: 180
+            }
         })
     }
 
@@ -94,7 +98,9 @@
         }
 
         // 结构赋值别名使用
-        let {p, p:{name, obj , obj:{id: ids}}}  = add 
+        let {p={
+
+        }, p:{name, obj , obj:{id: ids}}}  = add
         console.log(p);
         console.log(name);
         console.log(obj);
