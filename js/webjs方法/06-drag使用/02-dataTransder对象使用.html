@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .drag, .drag2 {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .target {
+            width: 300px;
+            height: 300px;
+            border: 1px dashed #000;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="drag" draggable="true">drag</div>
+<div class="drag2" draggable="true">drag2</div>
+<div class="target">target</div>
+</body>
+<script>
+    let drag = document.getElementsByClassName('drag')[0],
+        drag2 = document.getElementsByClassName('drag2')[0],
+        target = document.getElementsByClassName('target')[0];
+
+    //被拖拽元素
+    drag.addEventListener('dragstart',function(e){
+        let dt = e.dataTransfer;
+        //这里的this指的是drag
+        dt.setData('className',this.className);
+    })
+    drag2.addEventListener('dragstart',function(e){
+        let dt = e.dataTransfer;
+        dt.setData('className',this.className);
+    })
+
+    //目标元素
+    target.addEventListener('dragover',function(e){
+        e.preventDefault();//取消dragover的默认行为
+    })
+    target.addEventListener('drop',function(e){
+
+        let dt = e.dataTransfer;
+        let dataName = dt.getData('className');
+        this.appendChild(document.getElementsByClassName(dataName)[0]);
+    })
+</script>
+</html>

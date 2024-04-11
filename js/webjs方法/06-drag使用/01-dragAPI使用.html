@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .drag {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .target {
+            width: 300px;
+            height: 300px;
+            border: 1px dashed #000;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="drag" draggable="true">drag</div>
+<div class="target">target</div>
+</body>
+<!--
+    drag元素的监听事件
+    dragstart 开始
+    drag   进行
+    dragend 松手，但是不在目标元素上
+
+    target元素的监听事件
+    dragenter 进入
+    dragover  在上面
+    dragleave 离开
+    drop      在上面松手才触发
+-->
+<script>
+    let drag = document.getElementsByClassName('drag')[0],
+        target = document.getElementsByClassName('target')[0];
+
+    // drag.addEventListener('dragstart', function () {
+    //     console.log('dragstart');
+    // })
+    // drag.addEventListener('drag', function () {
+    //     console.log('drag');
+    // })
+    // drag.addEventListener('dragend', function () {
+    //     console.log('dragend');
+    // })
+
+    target.addEventListener('dragenter',function(){
+        console.log('dragenter');
+    })
+
+    target.addEventListener('dragover',function(e){
+        //取消dragover的默认行为,触发Drop
+        e.preventDefault();
+        console.log('dragover');
+    })
+
+    target.addEventListener('dragleave',function(){
+        console.log('dragleave');
+    })
+
+    target.addEventListener('drop',function(){
+        console.log('drop');
+    })
+
+</script>
+</html>
