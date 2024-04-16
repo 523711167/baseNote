@@ -26,10 +26,12 @@
     }
 
     div > p:nth-child(3) {
+        /* em是相对单位,查看本身元素是否具有font-size,在查找父元素,再查找根元素 */
         font-size: .666em;
     }
 
     div > p:nth-child(4) {
+        /* 以html设置的font-size为基准*/
         font-size: 1.25rem;
     }
 </style>
