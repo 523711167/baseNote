@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pxx {
+        }
+
+        #pdd {
+            height: 200px;
+            width: 300px;
+            display: flex;
+            border: 1px solid black;
+            align-items: center;
+        }
+
+        .pxx:first-child {
+            /*height: 40px;*/
+        }
+        .pxx:nth-child(2) {
+            /*height: 50px;*/
+            /* 改变单个项目的对齐方式 */
+            align-self: stretch;
+        }
+
+        .pxx:nth-child(3) {
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+<div id="pdd">
+    <div class="pxx" style="background-color: red;">1111111111</div>
+    <div class="pxx" style="background-color: blue;">2</div>
+    <div class="pxx" style="background-color: pink;">3</div>
+</div>
+</body>
+</html>
