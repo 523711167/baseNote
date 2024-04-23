@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            /*width: 100px;*/
+            /*height: 100px;*/
+            /*display: block;*/
+            /*vertical-align: bottom;*/
+            /*vertical-align: middle;*/
+        }
+
+        span {
+            background-color: red;
+            /* 为了测试红色背景 */
+            /* 如何解释这个情况我想想 */
+            /*display: inline-block;*/
+        }
+
+        div {
+            /*font-size: 28px;*/
+            /*font-size: 0;*/
+        }
+    </style>
+</head>
+<body>
+<div style="background-color:#e5edff;">
+    <img  src="img.png">
+    <span style="">xcjnm</span>
+</div>
+
+<div style="background-color:#e5edff;">
+        <!--  img默认就有行高 inline-block元素 又因为内部没有元素 以margin-bottom为baseline   -->
+        <img style="line-height: 0" src="img.png">
+</div>
+<!--
+    消除空白--可能img也是文本元素
+    1.设置img为块级元素, display:block
+    2.修改img的vertical-align值
+    3.设置div的行高
+-->
+
+
+</body>
+</html>

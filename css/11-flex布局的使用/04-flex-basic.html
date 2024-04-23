@@ -10,8 +10,14 @@
     .pxx {
         /*它的初始值是 auto，此时浏览器会检查元素是否设置了 width 属性值。
         如果有，则使用 width 的值作为 flex-basis 的值；如果没有，则用元素内容自身的大小。
-        如果 flex-basis 的值不是 auto，width 属性会被忽略。*/
-        flex-basis: 100px;
+        如果 flex-basis 的值不是 auto，width 属性会被忽略。
+        一般配合flex-grow使用, flex-basis:100px flex-grow:1 表示主轴方向剩下部分增长为1
+        */
+        flex-basis: 50px;
+    }
+
+    .pxx:last-child {
+        flex-grow: 1;
     }
 
     #pdd {

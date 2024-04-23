@@ -1,0 +1,6 @@
+1. 事件监听 API
+    以 on 开头的 API 用来监听某个事件是否触发
+2. 同步 API
+    以 Sync 结尾的 API 都是同步 API
+3. 异步 API
+    可以在回调和返回Promise之间切换

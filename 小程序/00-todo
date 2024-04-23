@@ -1,0 +1,14 @@
+1.为什么要用WXS函数响应事件
+2.事件系统
+    dataset
+    mark
+    touches
+    CanvasTouch
+    changedTouches
+    detail
+3.在自定义组件中触发双向绑定更新
+4.获取界面上的节点信息
+5 分栏模式
+6 小程序动画,动画的绑定事件,通过API创建动画,滚动出发动画
+7 Promise 时序差异
+8

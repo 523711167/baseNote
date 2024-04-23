@@ -1,0 +1,10 @@
+1.<view> {{message}} </view>
+2.<view wx:for="{{array}}"> {{item}} </view>
+3.<view wx:if="{{view == 'WEBVIEW'}}"> WEBVIEW </view>
+4.<template is="staffName" data="{{...staffA}}"></template>
+    定义模板
+    <template name="staffName">
+      <view>
+        FirstName: {{firstName}}, LastName: {{lastName}}
+      </view>
+    </template>
