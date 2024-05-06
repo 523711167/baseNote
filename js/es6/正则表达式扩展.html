@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,11 @@
     // (.*)贪婪模式 针对* +  会一直匹配到最后
     // <h1>123</h1>     reg = /<.*>/
     // 在贪婪模式下 会匹配全部 非贪婪下 会匹配<h1>
-    
+    {
+        let str = '+85.25-96'
+        const reg = /[+-]\d*\.?\d*/g
+        console.log(str.match(reg));
+    }
 
 
     // 疑问 视频的不一样的，很多属性没有,
@@ -42,11 +46,11 @@
         // 
         let add = `S324234234你知道么123啦啦啦`
         // 正向断言 (?=啦)还得满足啦结尾
-        // const reg = /\d+(?=啦)/
-        // console.log(reg.exec(add));
-        // 反向断言 (?=<么)还得满足么开头 safari浏览器好像不支持反向 裂开
-        let reg = /(?<=么)\d+/
+        const reg = /\d+(?=啦)/
         console.log(reg.exec(add));
+        // 反向断言 (?=<么)还得满足么开头 safari浏览器好像不支持反向 裂开
+        // let reg = /(?<=么)\d+/
+        // console.log(reg.exec(add));
     }
 
 

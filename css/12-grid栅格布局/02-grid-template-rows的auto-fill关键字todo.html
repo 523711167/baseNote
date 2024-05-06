@@ -25,7 +25,9 @@
             height: 200px;
             display: grid;
             /* auto-fill auto-fit 配置repeat和minmax函数使用*/
+            /* auto-fit 单元格大小固定,如果容器大小不固定,会自动填充元素*/
             grid-template-rows: repeat(2 ,50px);
+            /* 不会像flex布局换行 */
             grid-template-columns: repeat(5 ,minmax(50px , 1fr));
             border: 1px solid black;
         }

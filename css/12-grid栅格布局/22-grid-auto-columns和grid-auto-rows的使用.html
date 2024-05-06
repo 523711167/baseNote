@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .container {
+            display: grid;
+            grid-template-columns: 66px 66px 66px;
+            grid-template-rows: 66px 66px 66px;
+            grid-auto-rows: 50px;
+            grid-auto-columns: 50px;
+        }
+
+        .item {
+            text-align: center;
+            border: 1px solid #e5e4e9;
+        }
+    </style>
+</head>
+<body>
+<!--
+    grid-auto-rows属性3*3网格, 如果元素放置到第4列中,grid-auto-row决定row,
+    如果不设置,适应元素内容大小,column不可修改,在grid-auto-flow: row中
+-->
+<div class="container">
+    <div class="item" style="background: #ef342a;">1</div>
+    <div class="item" style="background: #f68f26;">2</div>
+    <div class="item" style="background: #4ba946;">3</div>
+    <div class="item" style="background: #0376c2;">4</div>
+    <div class="item" style="background: #c077af;">5</div>
+    <div class="item" style="background: #f8d29d;">6</div>
+    <div class="item" style="background: #b5a87f;">7</div>
+    <div class="item" style="background: #d0e4a9;grid-row-start: 4;grid-column-start: 2;"></div>
+    <div class="item" style="background: #4dc7ec;grid-row-start: 5;grid-column-start: 3;">9</div>
+</div>
+</body>
+</html>

@@ -21,13 +21,21 @@
             grid-template-rows: repeat(3, 1fr);
             grid-template-columns: repeat(3, 1fr);
             /* 默认行排列 column修改为列排列*/
-            grid-auto-flow: column;
+            grid-auto-flow: row;
+            /* dense 不知道未使用这个属性,还是使用的稠密机制   */
         }
 
         .container div {
             background-clip: content-box;
             background: pink;
             border: 5px solid white;
+        }
+
+        .container div:nth-child(2) {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
         }
     </style>
 </head>
@@ -41,8 +49,6 @@
     <div>5</div>
     <div>6</div>
     <div>7</div>
-    <div>8</div>
-    <div>9</div>
 </div>
 </body>
 </html>

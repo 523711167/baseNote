@@ -21,7 +21,7 @@
             grid-template-rows: repeat(4, 1fr);
             grid-template-columns: repeat(4, 1fr);
             /* 稠密填充机制，会自动填充空余区域 */
-            grid-auto-flow: row dense;
+            /*grid-auto-flow: row dense;*/
         }
 
         .container div {
@@ -36,11 +36,13 @@
            如果我明确位置，会自动填充
         */
         .container div:nth-child(1) {
-            /*grid-row: 1 / span 1;*/
+            grid-row: 1 / span 1;
             grid-column: 1/ span 2;
         }
 
         .container div:nth-child(3) {
+            /* 就目前来看dense只能发生在没有明确确认元素位置的情况下使用,如果明确确认位置,会自动填充,以前就没有明确确认,
+            一旦确认后,不给定dense也会自动填充*/
             /*grid-row: 3 / span 1;*/
             grid-column: 1/ span 3;
         }

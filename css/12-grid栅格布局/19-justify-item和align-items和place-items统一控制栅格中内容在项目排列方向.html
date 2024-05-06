@@ -18,15 +18,15 @@
             width: 400px;
             height: 400px;
             display: grid;
-            grid-template-rows: repeat(3, 1fr);
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px 100px;
             border: 1px solid grey;
             /* 控制行方向排列 */
             /*justify-items: center;*/
             /* 控制列方向排列 */
             /*align-items: stretch;*/
             /* 简写 列方向 行方向 */
-            place-items: center end;
+            /*place-items: center end;*/
         }
 
         .container div {
@@ -34,7 +34,7 @@
             height: 80px;
             background: pink;
             background-clip: content-box;
-            padding: 10px;
+            padding: 5px;
             border: 1px solid grey;
             box-sizing: border-box;
         }

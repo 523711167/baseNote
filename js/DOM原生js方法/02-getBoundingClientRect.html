@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #myElement {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            padding: 20px;
+            margin: 20px;
+            /*border: 1px solid black;*/
+        }
+    </style>
+</head>
+<body>
+<div id="myElement"></div>
+
+</body>
+<script>
+    // top：元素上边界距离视口上边界的距离。
+    // right：元素右边界距离视口左边界的距离。
+    // bottom：元素下边界距离视口上边界的距离。
+    // left：元素左边界距离视口左边界的距离。
+    // width：元素的宽度（等于 right - left）。
+    // height：元素的高度（等于 bottom - top）
+    const element = document.getElementById('myElement');
+    const rect = element.getBoundingClientRect();
+    console.log(element);
+    console.log('Element dimensions and position:', rect);
+    // alert(`Top: ${rect.top}, Bottom: ${rect.bottom}, Left: ${rect.left}, Right: ${rect.right}, Width: ${rect.width}, Height: ${rect.height}`);
+</script>
+</html>

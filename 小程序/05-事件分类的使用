@@ -12,3 +12,8 @@
     捕获阶段监听事件
 7.capture-catch绑定事件
     捕获阶段监听事件,终止捕获阶段,取消冒泡阶段
+
+
+mark属性
+dataset属性
+    都可以用来传递数据,但是mark会收集事件源到最外层节点元素之间所有的mark,dataset只会收集事件绑定节点的dataset

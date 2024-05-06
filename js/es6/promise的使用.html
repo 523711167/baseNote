@@ -100,20 +100,22 @@
         // await结合async的用法
         //
         let add = new Promise((resolve, reject) => {
-            reject()
+            resolve()
         }).then((value) => {
-            console.log('success')
+            console.log('01')
+        }).then((value) => {
+            console.log('02')
         }).catch((err) => {
             console.log('error')
         })
         //等价于
-        new Promise((resolve, reject) => {
-            reject()
-        }).then((value) => {
-            console.log('success')
-        }, (err) => {
-            console.log('error')
-        })
+        // new Promise((resolve, reject) => {
+        //     reject()
+        // }).then((value) => {
+        //     console.log('success')
+        // }, (err) => {
+        //     console.log('error')
+        // })
 
         //等价于
         function addd() {
@@ -124,18 +126,18 @@
 
         //async函数体内是按顺序执行,也会返回Promise对象
 
-        async function heiheihei() {
-            try {
-                let a = await addd()
-                console.log(a)
-                return 2
-            } catch (error) {
-                console.log(error)
-                return 1
-            }
-        }
-
-        console.log('heiheihei() =', heiheihei())
+        // async function heiheihei() {
+        //     try {
+        //         let a = await addd()
+        //         console.log(a)
+        //         return 2
+        //     } catch (error) {
+        //         console.log(error)
+        //         return 1
+        //     }
+        // }
+        //
+        // console.log('heiheihei() =', heiheihei())
     }
 
 /*     {
