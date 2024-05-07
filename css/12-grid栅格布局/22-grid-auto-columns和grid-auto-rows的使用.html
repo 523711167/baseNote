@@ -12,8 +12,8 @@
             display: grid;
             grid-template-columns: 66px 66px 66px;
             grid-template-rows: 66px 66px 66px;
-            grid-auto-rows: 50px;
-            grid-auto-columns: 50px;
+            /*grid-auto-rows: 50px;*/
+            /*grid-auto-columns: 50px;*/
         }
 
         .item {
@@ -24,8 +24,11 @@
 </head>
 <body>
 <!--
-    grid-auto-rows属性3*3网格, 如果元素放置到第4列中,grid-auto-row决定row,
-    如果不设置,适应元素内容大小,column不可修改,在grid-auto-flow: row中
+    grid-auto-rows属性3*3网格,在grid-auto-flow: row中
+        如果元素放置到第4列中,
+            grid-auto-row决定row,grid-auto-column不可修改
+            grid-auto-row如果不设置,适应元素内容大小,grid-auto-column不可修改,
+    grid-auto-rows影响的是未设置尺寸的行
 -->
 <div class="container">
     <div class="item" style="background: #ef342a;">1</div>

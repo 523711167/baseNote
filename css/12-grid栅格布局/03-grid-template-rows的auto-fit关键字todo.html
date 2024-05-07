@@ -8,15 +8,21 @@
     <title>Document</title>
     <style>
         .container {
-            width: 500px;
-            height: 500px;
+            font-size: 5px;
+            width: 30px;
+            /*height: 300px;*/
             display: grid;
-            grid-template-rows: repeat(auto-fit ,150px);
-            grid-template-columns: repeat(auto-fit ,150px);
-            resize: both;
-            padding: 10px;
-            overflow: auto;
+            grid-template-rows: repeat(auto-fill ,minmax(20px, 1fr));
+            grid-template-columns: repeat(auto-fill ,minmax(20px, 1fr));
+            /*resize: both;*/
+            /*padding: 10px;*/
+            /*overflow: auto;*/
             border: 1px solid black;
+            /*grid-auto-rows: 20px;*/
+        }
+
+        .container div {
+            /*border: 1px solid green;*/
         }
     </style>
 </head>
@@ -30,6 +36,8 @@
     <div>6</div>
     <div>7</div>
     <div>8</div>
+    <div>8</div>
+
 </div>
 </body>
 </html>
