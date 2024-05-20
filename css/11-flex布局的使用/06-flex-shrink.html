@@ -7,16 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .pxx {
-            flex-basis: 100px;
-            flex-shrink: 0;
-        }
 
         #pdd {
             width: 200px;
             display: flex;
             border: 1px solid black;
         }
+
+        .pxx {
+            flex-basis: 100px;
+            flex-shrink: 0;
+        }
+
 
         #pdd2 {
             width: 400px;
@@ -40,20 +42,60 @@
         .pxx1:nth-child(3) {
             flex-grow: 10;
         }
+
+
+        #pdd3 {
+            height: 100px;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .pxx3:nth-child(1) {
+            flex-basis: 30px;
+            flex-shrink: 0;
+        }
+
+        .pxx3:nth-child(2) {
+            flex-basis: 30px;
+            flex-shrink: 0;
+        }
+
+        .pxx3:nth-child(3) {
+            flex-basis: 30px;
+        }
     </style>
 </head>
 
 <body>
+    <!-- 主轴方向 超过长度会自动压缩-->
     <div id="pdd">
         <div class="pxx" style="background-color: red;">1111111111</div>
         <div class="pxx" style="background-color: blue;">2</div>
         <div class="pxx" style="background-color: pink;">3</div>
     </div>
-
+    <!-- 主轴方向 剩余空间会自动增长   -->
     <div id="pdd2">
         <div class="pxx1" style="background-color: red;">1111111111</div>
         <div class="pxx1" style="background-color: blue;">2</div>
         <div class="pxx1" style="background-color: pink;">3</div>
+    </div>
+
+    <br>
+    <!--  主轴方向长度超出,其他元素会自动压缩,但是有极限,会自动超过主轴的长度   -->
+    <!--  我想控制其长度 保证在范围内 使用overflow : hidden 配合滚轮ok  -->
+    <div id="pdd3">
+        <div class="pxx3" style="background-color: red;">1111111111</div>
+        <div class="pxx3" style="background-color: blue;">2</div>
+        <div class="pxx3" style="background-color: pink;">
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+            <div>1</div>
+        </div>
     </div>
 </body>
 

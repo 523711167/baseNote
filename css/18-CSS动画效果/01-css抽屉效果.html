@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        html {
+            background-color: #fff7e6;;
+        }
+
+        .float-layout {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            /*元素不可见,占据位置*/
+            visibility: hidden;
+            /*
+                过渡的元素
+                过度的时间
+                过渡效果的速度曲线
+                延迟时间
+            */
+            transition: visibility 300ms cubic-bezier(0.36, 0.66, 0.04, 1);
+            z-index: 800;
+        }
+
+        .float-layout__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 0.3 透明度 1不透明 0全透明*/
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 150ms ease-in;
+        }
+
+        .float-layout__container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            min-height: 100px;
+            max-height: 200px;
+            background-color: #fff;
+            transform: translate3d(0, 50px, 0);
+            transition: transform 1000ms cubic-bezier(0.36, 0.66, 0.04, 1);
+        }
+
+        .float-layout--active {
+            visibility: visible;
+        }
+
+        .float-layout--active .float-layout__overlay {
+            opacity: 1;
+        }
+
+        .float-layout--active .float-layout__container {
+            transform: translate3d(0, 0, 0);
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--
+        1.创建隐藏屏幕的容器
+        2.容器内创建充满屏幕的遮罩
+        3.容器内创建container区域
+    -->
+    <div style="height: 100px; width: 100px;">
+        <button id="show">出现吧,抽屉</button>
+    </div>
+    <div id="container" class="float-layout">
+        <div class="float-layout__overlay"></div>
+        <div class="float-layout__container">
+            111111111111111111111111111111
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('show').addEventListener('click', function(e) {
+            document.getElementById('container').classList.add('float-layout--active')
+        })
+    </script>
+</body>
+</html>
