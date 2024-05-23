@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    /**
+     *  const result  = myTagFunction`This is a ${adjective} example`
+     *  我们输出就是This is a bad example
+     *  假设我们需要自定义处理就可以通过以下操作
+     */
+    const adjective = 'bad'
+    function myTagFunction(strings, ...values) {
+        // 在这里可以对传入的 strings 和 values 进行处理
+        console.log('strings', strings);
+        console.log('values', values);
+        return 'new String'
+    }
+
+    /**
+     * 理解 ``中内容就是入参,并且会自定解析出strings 和 不定入参...values
+     * strings表示``入参 非站位符部分
+     * ...values表示 ``入参 占位符号部分
+     */
+    const result = myTagFunction`This is a ${adjective} example`;
+    console.log('result', result);
+</script>
+</body>
+</html>
