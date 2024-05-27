@@ -24,16 +24,19 @@
 
         .close {
             display: block;
-            /*position: absolute;*/
-            /*left: 0px;*/
-            /*right: 0;*/
-            /*top: 0;*/
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
         }
     </style>
 </head>
 <body>
 <!-- absolute会脱离文档流，定位最近的非static的父节点定位 -->
 <!-- position默认static， body默认为最外层非static-->
+<!-- position 浮动之后 影响的是后面的元素 之前的元素不影响-->
+<!-- button取消absolute之后,影响后面的元素,顶到2的后面去了-->
+<!-- 取消absolute的方向参数,在取消absolute定位后发现-->
 <div class="container">
     面积等于S=a<span class="symbol">2</span>
     <button class="close">关闭</button>
