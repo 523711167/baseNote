@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .panel-layout {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            transition: visibility 300ms cubic-bezier(0.36, 0.66, 0.04, 1);
+        }
+
+        .panel-layout-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 150ms ease-in;
+        }
+
+        .panel-layout-container {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff7e6;
+            transform: translate3d(0, 100%, 0);
+            transition: transform 1000ms ease-in;
+        }
+
+        .panel-layout-active {
+            visibility: visible;
+        }
+
+        .panel-layout-overlay-active {
+            opacity: 1;
+        }
+
+        .panel-layout-container-active {
+            transform: translate3d(0, 0, 0);
+        }
+
+
+
+        .at-tabs {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .at-tabs-header {
+            position: relative;
+            display: flex;
+            width: 100%;
+            text-align: center;
+            /* 文本超出容器长度, 不换行,会出现横向滚动条*/
+            white-space: nowrap;
+            box-sizing: border-box;
+            /* webkit内核浏览器隐藏滚动条*/
+            overflow: -moz-scrollbars-none;
+        }
+
+        .at-tabs-item {
+            position: relative;
+            /*
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: auto;
+            */
+            flex: 1;
+            padding: 12px 12px;
+            color: #333;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .at-tabs-item-active {
+            color: #6190E8;
+        }
+
+        .at-tabs-item-underline {
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #6190E8;
+            /* scaleX 缩小至看不见 */
+            transform: scaleX(0);
+            transition: all 0.15s;
+        }
+
+        /*
+        * 点击后元素underline x轴放大,上一个点击元素underline x轴缩小
+        */
+        .at-tabs-item-active .at-tabs-item-underline {
+            transform: scaleX(1);
+        }
+
+        /* 此处需要通过js设置 translate3d */
+        .at-tabs-body {
+            position: relative;
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+            /* 对所有属性都应用过渡效果 */
+            transition: all 0.3s;
+            /* 通过告知浏览器该元素会有哪些变化，使浏览器提前做好优化准备，增强页面渲染性能。 */
+            will-change: transfrom, left, top;
+            overflow: visible;
+        }
+
+        /*
+        * tabs下划线下还得有一根很长的线,美观一些,不知道怎么描述,一般是tabs数量*100%的宽度
+        */
+        .at-tabs-underline {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: auto;
+            right: auto;
+            width: 600%;
+            height: 1px;
+            background-color: #F0F0F0;
+        }
+
+        .at-tabs-pane {
+            /* 变成行内块元素 移动元素 */
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            white-space: inherit;
+            vertical-align: top;
+        }
+
+        .at-tabs-pane-inactive {
+            height: 0;
+            overflow: hidden;
+        }
+
+        .at-tabs-pane-active {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 确定位置, -->
+    <div class="panel-layout panel-layout-active">
+        <!--  遮罩      -->
+        <div class="panel-layout-overlay panel-layout-overlay-active">
+
+        </div>
+
+        <!--  内容      -->
+        <div class="panel-layout-container panel-layout-container-active">
+            <!--    组件大小,超出内容隐藏       -->
+            <div class="at-tabs">
+                <div class="at-tabs-header">
+                    <div class="at-tabs-item at-tabs-item-active">标签页1
+                        <div class="at-tabs-item-underline"></div>
+                    </div>
+                    <div class="at-tabs-item">标签页2
+                        <div class="at-tabs-item-underline"></div>
+                    </div>
+                    <div class="at-tabs-item">标签页3
+                        <div class="at-tabs-item-underline"></div>
+                    </div>
+                </div>
+                <div class="at-tabs-body">
+                    <div class="at-tabs-underline"></div>
+                    <div class="at-tabs-pane at-tabs-pane-active">
+                        <div>
+                            标签页1内容区
+                        </div>
+                    </div>
+                    <div class="at-tabs-pane at-tabs-pane-inactive">
+                        <div>
+                            标签页2内容区
+                        </div>
+                    </div>
+                    <div class="at-tabs-pane at-tabs-pane-inactive">
+                        <div>
+                            标签页3  内容区
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

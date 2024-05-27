@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 默认浏览器处理规则
+        前后空格忽略 中间连续空格只算一个
+        同时这些规则也适用于 制表符\t 换行符\r和\n === 空格
+    -->
+    <p>  hello
+        world  </p>
+    <!-- white-space用来处理空格
+        white-space normal 浏览器正常处理
+        容器宽度不够,单词超出,自动换行
+        自动换行规则 1.单词不可拆分换行,存在单次超出部分 2.单词塞不下换行
+    -->
+    <p style="width: 100px; background-color: red;">  hellohellohello hello
+        world</p>
+    <!--  white-space nowrap
+        不换行都在全在一行上
+    -->
+    <p style="width: 100px; background-color: red; white-space: nowrap">  hellohellohello hello
+        world</p>
+    <!--  white-space pre
+        按照pre标签处理 所有的空格 换行符保留
+        标签内容啥样 就是啥样 请忘记浏览器处理规则
+    -->
+    <p style="width: 100px; background-color: red; white-space: pre">  hellohellohello hello
+        world</p>
+    <!--  white-space pre-wrap
+        浏览器规则和pre规则结合
+        第一行 两个空格 pre规则
+        第二行 第一行单词塞不下,自动换行塞下单词,且超出宽度 浏览器规则
+        第三行 浏览器规则
+    -->
+    <p style="width: 100px; background-color: red; white-space: pre-wrap">  hellohellohello hello world</p>
+    <!--  white-space pre-line
+        换行符 pre规则
+        其余的 浏览器规则
+    -->
+    <p style="width: 100px; background-color: red; white-space: pre-line">  hellohellohello hello
+        world</p>
+</body>
+</html>
