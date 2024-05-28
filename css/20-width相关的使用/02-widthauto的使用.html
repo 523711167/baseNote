@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top_wrap {
+            height:30px;
+            padding:0 10px;
+            background-color:#4285f4;
+        }
+
+        .top{
+            margin:0 10px;
+            padding:0  10px;
+        }
+    </style>
+</head>
+<body>
+<!--
+如果想让子元素占据父元素的剩余可用空间，不应设置100%，而应该不设置，使其保持默认值
+默认浏览器会自动计算宽度
+通过父元素width 子元素本身设置的padding border计算子元素width
+-->
+<div class="top_wrap">
+    <div class="top">
+    </div>
+</div>
+</body>
+</html>

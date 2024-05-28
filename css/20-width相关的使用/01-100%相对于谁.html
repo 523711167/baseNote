@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .demo-parent {
+            width: 400px;
+            height: 60px;
+            line-height: 30px;
+            background: blue;
+        }
+
+        .demo-parent-margin {
+            margin: 10px;
+        }
+
+        .demo-parent-padding {
+            padding: 10px;
+        }
+
+        .demo-parent-border {
+            border: 5px solid #FF486B;
+        }
+
+        .demo-child {
+            width: 100%;
+            height: 30px;
+            background: pink;
+        }
+
+        .pos-relative {
+            position: relative;
+        }
+
+        .pos-absolute {
+            position: absolute;
+        }
+
+        .pos-fixed {
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<!-- 前提条件
+    1.子元素是快级元素
+    2.父元素设置宽度
+-->
+
+<!--
+    对于单纯的父子嵌套关系 或者嵌套关系下子元素设置浮动,width 100% 不会被margin padding border影响
+-->
+<div class="demo-parent demo-parent-padding demo-parent-border demo-parent-margin">
+    <div class='demo-child'></div>
+</div>
+
+<!-- 子元素设置relative,width 100% 同上-->
+<!--<div class="demo-parent demo-parent-border demo-parent-padding demo-parent-margin">-->
+<!--    <div class='demo-child pos-relative'></div>-->
+<!--</div>-->
+
+<!-- 子元素设置absolute, width 100% 相对于最近position非static父级元素宽度,注意!!父元素的padding也算作宽度-->
+<!-- position:fixed的元素，其一直是基于body,所以其宽度100%就是基于body。-->
+<!--<div class="demo-parent demo-parent-border pos-relative demo-parent-padding demo-parent-margin">-->
+<!--    <div class='demo-child pos-absolute'></div>-->
+<!--</div>-->
+
+</body>
+</html>
