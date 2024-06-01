@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px red solid;
+            overflow: hidden;
+        }
+
+        .test {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: pink;
+            transform: translate3d(100px, 0, 0);
+        }
+    </style>
+</head>
+<body>
+<!--
+    overflow hidden
+    absolute 之后 元素不受hidden影响
+-->
+    <div>
+        <div class="test">
+
+        </div>
+    </div>
+</body>
+</html>
