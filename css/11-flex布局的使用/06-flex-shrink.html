@@ -26,76 +26,43 @@
             border: 1px solid black;
         }
 
-        .pxx1 {
-            flex-basis: auto;
-            flex-shrink: 0;
-        }
-
         .pxx1:nth-child(1) {
-            flex-grow: 0.2;
+            flex-basis: 200px;
+            flex-shrink: 1;
         }
 
         .pxx1:nth-child(2) {
-            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 200px;
         }
 
         .pxx1:nth-child(3) {
-            flex-grow: 10;
-        }
-
-
-        #pdd3 {
-            height: 100px;
-            width: 100px;
-            display: flex;
-            flex-direction: column;
-
-        }
-
-        .pxx3:nth-child(1) {
-            flex-basis: 30px;
             flex-shrink: 0;
-        }
-
-        .pxx3:nth-child(2) {
-            flex-basis: 30px;
-            flex-shrink: 0;
-        }
-
-        .pxx3:nth-child(3) {
-            flex-basis: 30px;
+            flex-basis: 200px;
         }
     </style>
 </head>
 
 <body>
-    <!-- 主轴方向 超过长度会自动压缩-->
+    <!--
+        所有子元素合计长度超出容器宽度
+        子元素全部设置 flex-shrink: 0;
+        主轴方向 所有子元素将收缩,保证不超出容器宽度
+    -->
     <div id="pdd">
         <div class="pxx" style="background-color: red;">1111111111</div>
         <div class="pxx" style="background-color: blue;">2</div>
         <div class="pxx" style="background-color: pink;">3</div>
     </div>
-    <!-- 主轴方向 剩余空间会自动增长   -->
+    <!--
+        所有子元素合计长度超出容器宽度
+        子元素部分设置 flex-shrink: 0;
+        主轴方向 部分子元素将收缩,保证不超出容器宽度,如果依然超出就超出
+   -->
     <div id="pdd2">
-        <div class="pxx1" style="background-color: red;">1111111111</div>
+        <div class="pxx1" style="background-color: red;">1</div>
         <div class="pxx1" style="background-color: blue;">2</div>
         <div class="pxx1" style="background-color: pink;">3</div>
-    </div>
-
-    <br>
-    <!--  主轴方向长度超出,其他元素会自动压缩,但是有极限,会自动超过主轴的长度   -->
-    <!--  我想控制其长度 保证在范围内 使用overflow : hidden 配合滚轮ok  -->
-    <div id="pdd3">
-        <div class="pxx3" style="background-color: red;">1111111111</div>
-        <div class="pxx3" style="background-color: blue;">2</div>
-        <div class="pxx3" style="background-color: pink;">
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-            <div>1</div>
-        </div>
     </div>
 </body>
 
