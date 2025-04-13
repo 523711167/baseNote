@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    // setTimeout(() => {}, 0) 的作用
+    // 将耗时操作推迟执行,在React中可以先响应UI渲染，其实和Effect钩子差不多
+    // 可以延迟处理任务
+    // 改变方法的调用顺序，其实和第一条差不多
+    // 解决递归调用栈溢出问题 这个我暂时不太理解
+
+    // 背景： JavaScript 的事件循环机制：
+    // 执行栈：JavaScript 是单线程的，一次只能执行一段代码
+    // 任务队列：当异步操作完成时，相关回调会被放入任务队列
+    // 事件循环：当执行栈为空时，事件循环会从任务队列中取出任务并执行.(执行栈指的是整个方法的调用栈，参见下段代码)
+    // 微任务概念
+
+    function first() {
+        console.log('first = 1')
+        second()
+        console.log('first = 2')
+    }
+
+    function second() {
+        console.log('second = 1')
+        setTimeout(() => {
+            console.log('setTimeout = setTimeout', )
+        }, 0)
+        three()
+        console.log('second = 2')
+    }
+
+    function three() {
+        console.log('three = 1')
+        console.log('three = 2')
+    }
+
+    first()
+</script>
+</html>

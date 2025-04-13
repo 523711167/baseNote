@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左右分栏布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        .left-panel {
+            flex: 1;
+            background-color: #f0f0f0;
+            /* 当内容超出时显示垂直滚动条 */
+            overflow-y: auto;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .right-panel {
+            flex: 2;
+            background-color: #fff;
+            overflow-y: auto; /* 当内容超出时显示垂直滚动条 */
+            padding: 20px;
+        }
+
+        /* 添加一些内容样式以便测试滚动 */
+        .content-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left-panel">
+        <h2>左侧面板</h2>
+        <!-- 添加一些内容以便测试滚动条 -->
+        <div class="content-block">内容区块 1</div>
+        <div class="content-block">内容区块 2</div>
+        <!-- 重复内容块以确保超出高度 -->
+        <div class="content-block">内容区块 3</div>
+        <div class="content-block">内容区块 4</div>
+        <div class="content-block">内容区块 5</div>
+        <div class="content-block">内容区块 6</div>
+        <div class="content-block">内容区块 7</div>
+        <div class="content-block">内容区块 8</div>
+        <div class="content-block">内容区块 9</div>
+        <div class="content-block">内容区块 11</div>
+        <div class="content-block">内容区块 12</div>
+        <div class="content-block">内容区块 13</div>
+        <div class="content-block">内容区块 14</div>
+    </div>
+    <div class="right-panel">
+        <h2>右侧面板</h2>
+        <!-- 添加一些内容以便测试滚动条 -->
+        <div class="content-block">内容区块 1</div>
+        <div class="content-block">内容区块 2</div>
+        <!-- 重复内容块以确保超出高度 -->
+        <div class="content-block">内容区块 3</div>
+        <div class="content-block">内容区块 4</div>
+        <div class="content-block">内容区块 5</div>
+        <div class="content-block">内容区块 6</div>
+        <div class="content-block">内容区块 7</div>
+        <div class="content-block">内容区块 8</div>
+        <div class="content-block">内容区块 9</div>
+        <div class="content-block">内容区块 10</div>
+        <div class="content-block">内容区块 11</div>
+        <div class="content-block">内容区块 12</div>
+    </div>
+</div>
+</body>
+</html>

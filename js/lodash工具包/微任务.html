@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    // 微任务（Microtasks）
+    //      在当前执行栈清空后立即执行
+    //      所有微任务会在下一个宏任务之前执行完
+    //      新产生的微任务会被添加到当前微任务队列末尾并执行
+    //      例如：Promise 回调、queueMicrotask()
+    // 宏任务（Macrotasks）
+    //      在所有微任务执行完毕后才会执行
+    //      一次事件循环只执行一个宏任务
+    //      例如：setTimeout、setInterval、setImmediate、I/O 操作、UI 渲染
+    console.log('1. 同步代码开始');
+
+    setTimeout(() => {
+        console.log('2. 宏任务 (setTimeout)');
+
+        Promise.resolve().then(() => {
+            console.log('3. 宏任务中的微任务');
+        });
+    }, 0);
+
+    Promise.resolve().then(() => {
+        console.log('4. 微任务 1');
+
+        // 在微任务中创建的新微任务会在当前微任务队列的末尾执行
+        queueMicrotask(() => {
+            console.log('5. 微任务中的微任务');
+        });
+    });
+
+    Promise.resolve().then(() => {
+        console.log('6. 微任务 2');
+    });
+
+    console.log('7. 同步代码结束');
+
+    // 输出顺序:
+    // 1. 同步代码开始
+    // 7. 同步代码结束
+    // 4. 微任务 1
+    // 6. 微任务 2
+    // 5. 微任务中的微任务
+    // 2. 宏任务 (setTimeout)
+    // 3. 宏任务中的微任务
+
+</script>
+</html>

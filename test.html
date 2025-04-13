@@ -10,9 +10,22 @@
 <body>
 
 <script>
-    const reg = /[0-9]+\.?[0-9]+|[+-][0-9]+\.?[0-9]+/g
-    const str = '75.02+45-256+254+1245500'
-    console.log(str.match(reg));
+
 </script>
 </body>
+<!-- 写一个Get请求的表单提交-->
+
+<iframe height="100px" width="100px">
+    <form action="http://127.0.0.1:10010/user/username?username=admin">
+
+        <button type="submit">提交</button>
+    </form>
+</iframe>
+
+<!-- 自动提交的表单 -->
+<form id="csrfForm" action="http://xiaoxi:10010/user/username" method="GET">
+    <input type="hidden" name="username" value="admin">
+    <button type="submit">提交</button>
+</form>
+
 </html>
