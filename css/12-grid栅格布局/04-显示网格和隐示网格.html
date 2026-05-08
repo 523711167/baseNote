@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body > div:nth-child(1) {
+            background: #ffaa5d;
+            display: grid;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px;
+            grid-auto-rows: 120px;
+            /* grid-auto-columns: 150px; 默认根据row排列，因此不生效 */
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+</div>
+
+<div>
+
+</div>
+</body>
+<script>
+    <!-- 显示网格和隐示网格 grid-template-rows和grid-template-columns定义的就是显示网格，但是实际场景中，网格元素会超出，超出部分就叫隐示网格  -->
+    //    grid-auto-rows和 grid-auto-columns控制隐示网格的列和行长度
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body > div:nth-child(1) {
+            display: grid;
+            grid-template-columns: 120px 120px;
+            grid-template-rows: 120px 120px;
+            gap: 10px;
+
+            justify-items: center;
+            align-items: center;
+        }
+
+        .item2 {
+            background: #0069d9;
+        }
+
+        .item3 {
+            background: #0069d9;
+            /* 网格内部元素没有定义高度和宽度默认是根据内容，stretch拉伸元素充满网格 */
+            justify-self: stretch;
+            align-self: stretch;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+</div>
+
+
+
+</body>
+<script>
+
+<!--    -->
+//   justify-items: center;
+//   align-items: center;
+//   place-items: center; 管理网格元素中内容的排列方式
+</script>
+</html>

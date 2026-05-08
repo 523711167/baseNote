@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body > div:nth-child(1) {
+            display: grid;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px 100px;
+            gap: 10px;
+        }
+
+        body > div:nth-child(1) > div:nth-child(1) {
+            grid-row: 1 / span 2;
+            grid-column: 1 / span 2;
+            border: 1px solid red;
+        }
+
+        body > div:nth-child(2) {
+            display: grid;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px;
+        }
+
+
+        body > div:nth-child(2) > div:nth-child(1) {
+            grid-row: 1 / span 1;
+            grid-column: 1 / span 2;
+            border: 1px solid red;
+        }
+
+        body > div:nth-child(2) > div:nth-child(4) {
+            grid-row: 3 / span 1;
+            grid-column: 1 / span 2;
+            border: 1px solid red;
+        }
+
+
+        body > div:nth-child(3) {
+            display: grid;
+            grid-template-rows: 100px 100px 100px;
+            grid-template-columns: 100px 100px;
+            grid-template-areas:
+                "header header"
+                "sider content"
+                "footer footer"
+        }
+
+        body > div > div.header {
+            grid-area: header;
+            border: 1px solid red;
+        }
+
+        body > div > div.sider {
+            grid-area: sider;
+        }
+
+        body > div > div.content {
+            grid-area: content;
+        }
+
+        body > div > div.footer {
+            grid-area: footer;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+
+<div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<div>
+    <div class="header">1</div>
+    <div class="sider">2</div>
+    <div class="content">3</div>
+    <div class="footer">4</div>
+</div>
+
+</body>
+<script>
+<!-- grid-row和grid-colum 通过网格线定位网格位置-->
+// grid-template-areas通过命名来定位网格位置   可以使用.表示特殊占位
+</script>
+</html>
