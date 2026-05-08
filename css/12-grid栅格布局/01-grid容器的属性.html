@@ -7,19 +7,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div {
+        div:nth-child(1) {
+            background: #4ba946;
             /* 使用grid布局*/
             display: grid;
             /* 定义行和列 单位 px % */
             grid-template-rows: 100px 100px 100px;
-            grid-template-columns: 100px 100px 100px;
+            grid-template-columns: 50px 50px 50px;
+            gap: 10px;
             /* 定义行和列函数写法   */
             /*grid-template-rows: repeat(3, 33.33%);*/
             /*grid-template-rows: repeat(3, 33.33%);*/
         }
+
+        div:nth-child(2) {
+            height: 200px;
+            background: #4ba946;
+            /* 使用grid布局*/
+            display: grid;
+            /* 定义行和列 单位 px % */
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        div:nth-child(3) {
+            height: 200px;
+            background: #0069d9;
+            /* 使用grid布局*/
+            display: grid;
+            /* 定义行和列 单位 px % */
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
+<div>
+
+</div>
+
+<div>
+
+</div>
+
 <div>
 
 </div>

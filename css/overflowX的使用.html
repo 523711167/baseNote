@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    .table-wrap {
+        width: 100%;
+        /* sroll出现滑动条 auto内容超出外层元素宽度出现滑动条 */
+        overflow-x: auto;
+        border: 1px solid #ccc;
+    }
+
+    /* 内容超出宽度就会出现滑动条*/
+    .table {
+        min-width: 1200px;
+    }
+</style>
+<body>
+<div class="table-wrap">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>手机号</th>
+            <th>邮箱</th>
+            <th>公司</th>
+            <th>部门</th>
+            <th>职位</th>
+            <th>地址</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>张三</td>
+            <td>13800138000</td>
+            <td>zhangsan@example.com</td>
+            <td>XX 科技有限公司</td>
+            <td>平台研发部</td>
+            <td>高级前端工程师</td>
+            <td>上海市浦东新区某某路 100 号 8 楼</td>
+            <td>这里是一段比较长的备注内容</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    function app(index=[], data={ name: 'pxx'}, endFlag=[0,9,8,7]) {
+        console.log('index = ', index)
+        console.log('data = ', data)
+        console.log('endFlag = ', endFlag)
+    }
+    // 总结
+    // 传递参数形式 null和undefined 都会被替换
+    // 函数定义方式 null不会被替换 undefined 会被替换
+
+    // 不会替换默认值
+    app(null, null, null)
+    console.log('---------------------')
+    // 会被默认值替换
+    app(undefined, undefined, undefined)
+    console.log('---------------------')
+    app(null || [1,2,3], null || {})
+    console.log('---------------------')
+    app(undefined || [1,2,3], undefined || {}, undefined)
+    console.log('---------------------')
+    app([1994, 11, 1] || [1,2,3], { name: 'xiaoxipeng' } || {}, 'xiaoxipeng')
+    console.log('---------------------')
+</script>
+
+
+</html>

@@ -7,28 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+
         .container {
-            width: 300px;
-            height: 200px;
+            width: 700px;
             display: grid;
             /* auto-fill auto-fit 配置repeat和minmax函数使用*/
-            grid-template-rows: repeat(auto-fill ,minmax(50px , 1fr));
-            grid-template-columns: repeat(auto-fill ,50px);
-            resize: both;
-            padding: 10px;
-            overflow: auto;
-            border: 1px solid black;
+            grid-template-columns: repeat(auto-fill ,minmax(150px, 1fr));
+        }
+
+        body > div:nth-child(2) {
+            width: 700px;
+            display: grid;
+            /* auto-fill auto-fit 配置repeat和minmax函数使用*/
+            grid-template-columns: repeat(auto-fit ,minmax(150px, 1fr));
         }
 
         .container1 {
-            width: 100px;
+            width: 200px;
             height: 200px;
             display: grid;
             /* auto-fill auto-fit 配置repeat和minmax函数使用*/
-            /* auto-fit 单元格大小固定,如果容器大小不固定,会自动填充元素*/
-            grid-template-rows: repeat(2 ,50px);
+            /* auto-fill 单元格大小固定,如果容器大小不影响单元格的大小*/
+            /* auto-fit  单元格大小固定,如果容器大小不固定, 会跟随剩余空间增大*/
+            grid-template-rows: repeat(auto-fit ,minmax(30px, 1fr));
             /* 不会像flex布局换行 */
-            grid-template-columns: repeat(5 ,minmax(50px , 1fr));
+            grid-template-columns: repeat(3 ,minmax(50px , 1fr));
             border: 1px solid black;
         }
 
@@ -42,22 +45,13 @@
     <div>1</div>
     <div>2</div>
     <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
 </div>
 
-<div class="container1">
+<div class="container">
     <div>1</div>
     <div>2</div>
     <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
 </div>
+
 </body>
 </html>
