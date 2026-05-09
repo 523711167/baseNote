@@ -111,9 +111,9 @@
     //      nowarp (注：在设置flex元素不缩小，会超出flex容器沿主轴方向长度）
 
     
-    // flex-basic flex元素属性
+    // flex-basic flex元素属性 表示元素在容器中最初分配的长度，比width优先，后续根据shrink和grow变化
     //      px  设置元素沿主轴方向的长度
-    //      auto 沿主轴方向长度为元素内容长度 先根据width 内容
+    //      auto 沿主轴方向长度 先看元素自己有没有设置 width / height，再看内容大小。
     //      content 优先级别高于width 定义在剩余空间未分配前的默认大小
 
     // flex-grow flex元素属性 

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+    * {
+        margin: 0;
+    }
+
+    .store-shell {
+        min-height: 100vh;
+        background: #ffd891;
+    }
+
+    .store-header,.store-main,.store-footer {
+        width: min(1360px, calc(100vw - 64px));
+        margin: 0 auto;
+    }
+
+    .store-header__inner {
+        display: grid;
+        grid-template-columns: 180px 1fr 240px;
+        gap: 24px;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .store-main {
+        padding: 30px 0 56px;
+    }
+
+    .store-footer__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(36, 31, 28, 0.08);
+    }
+
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .product-card {
+        border: 1px solid #90bfd3;
+    }
+
+    .product-card_media {
+        position: relative;
+        aspect-ratio: 1 / 0.82;
+        padding: 14px;
+        background: #e16060;
+        background-clip: content-box;
+    }
+
+    .product-card_body {
+        padding: 14px;
+    }
+
+    .product-card__meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .product-card__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-card__category {
+        font-size: 12px;
+        color: #b76439;
+        margin-bottom: 10px;
+    }
+
+    .product-card__title {
+        font-size: 20px;
+        margin: 0 0 10px;
+    }
+
+    .product-card__desc {
+        font-size: 14px;
+        color: #666;
+        margin: 0 0 14px;
+    }
+</style>
+<body>
+<div class="store-shell">
+    <header class="store-header">
+        <div class="store-header__inner">
+            <span>Logo</span>
+            <span>导航</span>
+            <span>搜索</span>
+        </div>
+    </header>
+
+    <main class="store-main">
+        <section class="product-section">
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-card_media"></div>
+                    <div class="product-card_body">
+                        <div class="product-card__category">数码好物</div>
+                        <h3 class="product-card__title">Aurora 降噪头戴耳机</h3>
+                        <p class="product-card__desc">适合居家、通勤和长时间办公使用。</p>
+
+                        <div class="product-card__meta">
+                            <span>★★★★★</span>
+                            <span>4.9</span>
+                        </div>
+
+                        <div class="product-card__footer">
+                            <div class="product-card__price">
+                                <strong>¥699</strong>
+                                <span>¥899</span>
+                            </div>
+                            <button>加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card_media"></div>
+                    <div class="product-card_body"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="store-footer">
+        <div class="store-footer__inner">
+            页脚
+        </div>
+    </footer>
+</div>
+</body>
+</html>
